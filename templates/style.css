@@ -1,0 +1,270 @@
+<style type="text/css" href="mystyle.css" />
+
+
+body {
+				margin:0;
+     }
+
+
+.header_main{ 
+	       background-image: url(templates/images/gradient.png);
+				 background-repeat:repeat-x;
+				 height:78px;
+			 }
+
+.liner{ 
+				  background-image: url(templates/images/liner.jpg);
+				  height:20px;
+       }
+
+
+.logout{ 
+				margin-left: 20px;
+				float:left;
+				top:79px;
+				left:9px;	
+	   	 }
+.hello { 
+				margin-left: 20px;
+				top:79px;
+				left:80px;	
+				float: left;
+	   	 }
+
+.content{ 
+          	background-color: #FFF;
+						background-position:center;
+		  			width:1027px;
+       	}	      
+.login{ 
+				width:366px;
+				height:258px;	
+			}
+
+.top{ 
+			background-color:#0A6184;
+			width:366px;
+			height:20px;	
+		}
+
+.form_lbl{ 
+						float: left;
+						margin-left: 20px;
+						width: 30%;
+					}
+
+.form_field{ 
+						 float: left;
+   					 width: 30%;
+					 }
+					
+.submit{
+				 bottom:450px;
+				 /*position: absolute;*/
+				 float:right;
+				 right: 500px; 
+			 }
+		
+.logback{ 
+					background-color:#A0A0A4;
+					width:366px;
+					height:220px;	
+				}
+				
+.logerror{ 
+	         bottom:450px;
+				 	 right: 570px; 
+				 }
+
+	ul{ 
+	    background-color:#81AEC0;
+			margin: 40px 0 0 0;
+			padding:0;
+			border-bottom: 1px solid #A9010C;
+			list-style:none;
+			width:130px;
+	}
+	 
+li{
+	  padding:2px 10px;
+		border-top:1px solid #000;
+		border-left:1px solid #000;
+		border-right:1px solid #000;
+		border-bottom: 1px solid #A9010C;
+	}
+	
+a:hover{  
+						background-color:#DEACE5;
+				}
+
+.quick_links{
+			position:fixed;
+			right:200px;
+}
+
+.reg_container{ 
+								width:366px;
+							}
+							
+.reg_back{
+	         background-color:#A0A0A4;
+					 width:366px;
+					 height:220px;	
+				 }
+
+.reg_button{
+						 bottom:450px;
+						 right: 500px; 
+					 }
+					 
+.reg_caption{ 
+							 bottom:480px;
+							 right: 500px; 
+						 }
+			
+			 		
+.register{
+					 background-color:#E0FFFF;
+					 background-position:center;
+         }
+
+.result{
+	     		background-color:#CFBEB6;
+	   	 }
+.counter{ 
+					position:fixed;
+					top:1px;
+					left:40px;  
+				}
+
+.counter2{
+					 background-color:#800000;
+					 background-position:center;
+         }
+ 
+	
+.searching{ 
+            background-color:#A00;
+		    		background-position:center;
+		  		} 
+
+	   
+	   
+.footer{ 
+					border-top:1px solid gray;
+					clear: both;
+					color: #9EC1CF;
+					font-size: 11px;
+					text-align: center;
+				}
+				
+.line_big{ 
+					border-top:5px solid gray;
+					clear: both;
+					color: #9EC1CF;
+					font-size: 11px;
+					text-align: center;
+				}
+
+.sub_head{
+		width:1030px;
+	 	height:62px;	
+}
+
+.sub_content{
+		width:1027px;
+		height:1554px;	
+		background-color:#8CB57E;
+}
+
+.sub_content_what{
+		width:1027px;
+		height:1990px;	
+		background-color:#8CB57E;
+}
+
+.sub_content_script{
+		width:1027px;
+		height:4300px;	
+		background-color:#8CB57E;
+}
+
+.sub_content_rebuttals{
+		width:1027px;
+		height:2635px;	
+		background-color:#8CB57E;
+}
+
+.intro{
+		width:238px;
+		height:26px;	
+		border-top:1px solid gray;
+		border-left:1px solid gray;
+		border-right:1px solid gray;
+		border-bottom:1px solid gray;
+}
+
+.intro_2{
+		width:300px;
+		height:26px;	
+		border-top:1px solid gray;
+		border-left:1px solid gray;
+		border-right:1px solid gray;
+		border-bottom:1px solid gray;
+}
+
+.key{
+		width:243px;
+		height:860px;	
+		background-image: url(templates/images/key_back.png);
+		border-top:1px solid gray;
+		border-left:1px solid gray;
+		border-right:1px solid gray;
+		border-bottom:1px solid gray;
+}
+
+.key_2{
+		width:243px;
+		height:940px;	
+		background-image: url(templates/images/key_back.png);
+		border-top:1px solid gray;
+		border-left:1px solid gray;
+		border-right:1px solid gray;
+		border-bottom:1px solid gray;
+}
+
+
+.nav{
+		width:129px;
+		height:108px;	
+		position:fixed;
+		top:166px;
+		left:90px;  
+}
+.leftcontent {
+	float: left;
+	width: 180px;
+}
+.rightcontent {
+	float: right;
+	width: 1020px;
+	margin-bottom:30px;
+}
+
+.tooltip {
+					background-color:#000;
+					border:1px solid #fff;
+					padding:10px 15px;
+					width:300px;
+					display:none;
+					color:#fff;
+					text-align:center;
+					font-size:12px;
+					font-family: Tahoma, Geneva, sans-serif;
+				
+					/* outline radius for mozilla/firefox only */
+					-moz-box-shadow:0 0 10px #000;
+					-webkit-box-shadow:0 0 10px #000;
+					}
+	
+</style>

@@ -185,14 +185,29 @@ a:hover{
 
 .sub_content_script{
 		width:1027px;
-		height:4300px;	
+		height:4090px;	
 		background-color:#8CB57E;
 }
 
 .sub_content_rebuttals{
 		width:1027px;
-		height:2635px;	
+		
 		background-color:#8CB57E;
+}
+
+.sub_content_container{
+		width:1000px;
+		
+		background-color:#F4F6F5;
+}
+
+.clicker{
+				color:#773A7F;
+}
+
+.clicker:hover{
+				background-color:#C898CE;
+				color:#FFFFFF;
 }
 
 .intro{

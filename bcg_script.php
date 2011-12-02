@@ -65,8 +65,7 @@
 		<tr>
 			<td>
 				Hello! This is [agent name]. Could I speak with the owner or manager of [business name] please? (Wait for owner/manager)<br><br>
-Hi there! Could I have your name so I can address you properly? (Obtain name)
-
+				Hi there! Could I have your name so I can address you properly? (Obtain name)
 			</td>
 		</tr>
 		<tr>
@@ -95,33 +94,32 @@ Hi there! Could I have your name so I can address you properly? (Obtain name)
 		<tr>
 			<td>
 				Hi, [contact name]! Again, this is [agent name] from Big City Guide. We are a mobile city guidebook that helps business travelers, tourist, locals and students find what they want and what they need instantaneously thru their Smartphone.<br>
-We make a free downloadable application for iPhone and Android users to help them search for locations such as restaurants, café, hotels, bed and breakfast and tourist attractions and <b>[mention their business type]</b>. <br><br>
-
-Anybody would be able to locate businesses closest to them. It will provide them direction on how to get there, know the opening hours, current offers, and view detailed information of each business including contact numbers.<br><br>
-
-We’d like to add [business name] to our database.<br><br>
-
-<b>Talking points: Walk-through app Download</b><br>
-If you don’t mind me asking, do you have an iPhone or an Android? <i>(If yes, walk them through the download and features of the app.) </i><br><br>
-
-Go to your app store/android market and search for "big city guide."<br><br>
-
-You'll see that we are the only result. If you select us, you'll see a description of our app as well as some nice pictures of what the screen would look like. Go ahead and download it. You'll notice that it's free, so users don't have to pay to access your company's information.
-<i>(If no, ask them if they have a computer, then walk them through the features on our website. If no computer and no phone, then just go through the features with them verbally).</i><br><br>
-<b>Features (give benefit statements)</b><br>
-	&nbsp;&nbsp;&nbsp;•	Businesses are listed by category<br>
-	&nbsp;&nbsp;&nbsp;•	Listing includes the name, address and phone number<br>
-	&nbsp;&nbsp;&nbsp;•	Link to the website<br>
-	&nbsp;&nbsp;&nbsp;•	View latest twitter feed<br>
-	&nbsp;&nbsp;&nbsp;•	Map and visual directions are provided<br>
-	&nbsp;&nbsp;&nbsp;•	My cloud feature<br>
-	&nbsp;&nbsp;&nbsp;•	FREE to download for Users<br>
-	&nbsp;&nbsp;&nbsp;•	Unlimited updates for subscribers<br><br>
-
-As I’ve mentioned, we’re marketing ourselves as a free, do everything app and the latest version has only been up for a few months, but we’ve already had thousands of downloads. <br><br>
-
-I’m not sure if you are aware that over 31 million tourists visit the UK every year, and more of them will be coming next year for the Olympics. Are you aware of this, Mr. [DM Name]? 
-
+				We make a free downloadable application for iPhone and Android users to help them search for locations such as restaurants, café, hotels, bed and breakfast and tourist attractions and <b>[mention their business type].</b><br><br> 
+				
+				Anybody would be able to locate businesses closest to them. It will provide them direction on how to get there, know the opening hours, current offers, and view detailed information of each business including contact numbers.<br><br>
+				
+				We’d like to add [business name] to our database.<br><br>
+				<b>Talking points: Walk-through app Download</b><br>
+				If you don’t mind me asking, do you have an iPhone or an Android? <i>(If yes, walk them through the download and features of the app.)</i><br><br> 
+				
+				Go to your app store/android market and search for "big city guide."<br><br>
+				
+				You'll see that we are the only result. If you select us, you'll see a description of our app as well as some nice pictures of what the screen would look like. Go ahead and download it. You'll notice that it's free, so users don't have to pay to access your company's information.<br>
+				<i>(If no, ask them if they have a computer, then walk them through the features on our website. If no computer and no phone, then just go through the features with them verbally).</i><br><br>
+				<b>Features (give benefit statements)</b><br>
+				&nbsp;&nbsp;&nbsp;•	Businesses are listed by category<br>
+				&nbsp;&nbsp;&nbsp;•	Listing includes the name, address and phone number<br>
+				&nbsp;&nbsp;&nbsp;•	Link to the website<br>
+				&nbsp;&nbsp;&nbsp;•	View latest twitter feed<br>
+				&nbsp;&nbsp;&nbsp;•	Map and visual directions are provided<br>
+				&nbsp;&nbsp;&nbsp;•	My cloud feature<br>
+				&nbsp;&nbsp;&nbsp;•	FREE to download for Users<br>
+				&nbsp;&nbsp;&nbsp;•	Unlimited updates for subscribers<br><br>
+				
+				As I’ve mentioned, we’re marketing ourselves as a free, do everything app and the latest version has only been up for a few months, but we’ve already had thousands of downloads. <br><br>
+				
+				I’m not sure if you are aware that over 31 million tourists visit the UK every year, and more of them will be coming next year for the Olympics. Are you aware of this, Mr. [DM Name]? 
+								
 			</td>
 		</tr>
 		<tr>
@@ -145,41 +143,12 @@ I’m not sure if you are aware that over 31 million tourists visit the UK every y
 		</tr>
 		<tr>
 			<td>
-				I’d like to boost your business by adding you to our city guide and letting all those tourists know who and where [business name] is.<br><br>
+				To help you boost your business, we have created a profile of your [business type] on bigcityguide for you to have a first hand feel of what it is like to be in our mobile app, and to let all those tourists know who and where [business name] is.<br><br>
 
-				Adding your business to our database is easy. I can gather important information like opening times, a short description of your business, contact information, 2 keywords that will help users locate you…. <br><br>
-				
-				Once listed, your business profile is accessible to millions of iPhone or Android based Smartphone users who may potentially be your customers. Listing with BigCityGuide is just a fraction of the cost it would take to put up a newspaper or media ad, with much better results. It’s only £25 annually or about 2 pounds and few pence a month. There are no long term contracts with BigCityGuide.<br><br>
-			</td>
-		</tr>
-		<tr>
-		</tr>
-		<tr>
-		</tr>
-		<tr>
-		</tr>
-		<tr>
-		</tr>
-		<tr>
-		</tr>
-		<tr>
-		</tr>
-		<tr>
-		</tr>
-		<tr>
-			<td>
-				<div class = "intro"><b>CLOSE</b></div>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Shall we go ahead and get your profile started?<br><br>
-
-				Once I have created your basic profile, please have you credit card handy. <br><br>
-				
-				I would need the card number and expiration to process your payment. After I’ve processed your payment, we’ll send you an email with login information for you to update your company profile including a twitter feed. Ok?<br><br>
-				
-				<i>Start taking down Business Information, etc…..</i>
+				Updating your business to our database is easy. I can gather information like opening times, a short description of your business, contact information, 2 keywords that will help users locate you...<br><br>
+					
+				Once updated, your business profile is accessible to millions of iPhone or Android based Smartphone users who may potentially be your customers.<br>
+				Listing with BigCityGuide is just a fraction of the cost it would take to put up a newspaper or media ad, with much better results. It’s only £25 annually or about 2 pounds and few pence a month. There are no long term contracts with BigCityGuide
 
 			</td>
 		</tr>
@@ -216,15 +185,14 @@ I’m not sure if you are aware that over 31 million tourists visit the UK every y
 				&nbsp;&nbsp;&nbsp;•	Email: <br>
 				&nbsp;&nbsp;&nbsp;•	Website: <br>	
 				&nbsp;&nbsp;&nbsp;•	Opening Times: 	<br>
-				&nbsp;&nbsp;&nbsp;•	Business Description:<br> 
+				&nbsp;&nbsp;&nbsp;•	Business Description: <br>
 				&nbsp;&nbsp;&nbsp;•	Business Keyword 1: <br>
-				&nbsp;&nbsp;&nbsp;•	Business Keyword 2: <br><br>
-				<b>Contact Information</b><br>
-				&nbsp;&nbsp;&nbsp;•	Contact Person:<br>
-				&nbsp;&nbsp;&nbsp;•	Contact Email:<br>
-				&nbsp;&nbsp;&nbsp;•	Contact Phone:<br>
-								
-
+				&nbsp;&nbsp;&nbsp;•	Business Keyword 2: <br>	
+				
+				<b>Contact Information</b><br>	
+				&nbsp;&nbsp;&nbsp;•	Contact Person:<br>	
+				&nbsp;&nbsp;&nbsp;•	Contact Email:<br>	
+				&nbsp;&nbsp;&nbsp;•	Contact Phone:<br>	
 			</td>
 		</tr>
 		<tr>
@@ -248,20 +216,22 @@ I’m not sure if you are aware that over 31 million tourists visit the UK every y
 		</tr>
 		<tr>
 			<td>
-				Also to show that we have authorization to set up your BigCityGuide listing, we’ve collected your credit card information which is:<br>
+				<font color = "BLUE">Also to show that we have authorization to set up your BigCityGuide listing, we’ve collected your credit card information which is:<br>
 				&nbsp;&nbsp;&nbsp;1.	CC Type : (Visa, MasterCard, American Express, Discover)<br>
 				&nbsp;&nbsp;&nbsp;2.	CC Number :  <br>
 				&nbsp;&nbsp;&nbsp;3.	Expiration date :  (mm/yy)<br>
 				&nbsp;&nbsp;&nbsp;4.	Name that appears on the CC:  <br>
-				Is that correct?<br><br>
-				We’ll be sending you the confirmation email with the details within 24 hours. Once you get it, you can use the username and password immediately. After you’ve saved your profile, you can check the app right away to see [business name]’s Big City Guide entry. And please remember that you can edit your information at any time, to update promotions, or put in more content.<br><br>
-
-				Just to recap, we will be processing GBP25 on the card that you have provided me, and the name that will appear on your credit card bill is Polaris. Before I go, do you have further clarifications? Please don’t hesitate to contact me M-F, 9 to 5 at +442030025941 should you require further assistance <br><br>
+				Is that correct?<br><br></font>
 				
+				We’ll be sending you the confirmation email with the details within 24 hours. Once you get it, you can use the username and password immediately. After you’ve saved your profile, you can check the app right away to see [business name]’s Big City Guide entry. And please remember that you can edit your information at any time, to update promotions, or put in more content.<br><br>
+				
+				<font color = "BLUE">Just to recap, we will be processing GBP25 on the card that you have provided me, and the name that will appear on your credit card bill is Polaris. Before I go, do you have further clarifications? Please don’t hesitate to contact me M-F, 9 to 5 at +442030025941 should you require further assistance</font> <br><br>
+
 				or<br><br>
 				
 				If you have any questions or would like to follow up at any part of the process, please call our customer care hotline at 01904-236200. Thanks, [customer name]. Have a good day. 
 				We look forward to having you as part of the Big City Guide community.
+				 <br>
 			</td>
 		</tr>
 		<tr>
@@ -401,6 +371,7 @@ I’m not sure if you are aware that over 31 million tourists visit the UK every y
 					Wolverhampton<br>
 					Worcester<br>
 					Bournemouth<br>
+					
 				</div><br><br>
 				Step-by-Step info:<br><br>
 

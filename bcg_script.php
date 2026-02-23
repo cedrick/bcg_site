@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>Big City Guide Script</title>
 <link rel="shortcut icon" href="templates/images/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="library/ui-lightness/jquery-ui.css" />
@@ -94,31 +96,31 @@
 		<tr>
 			<td>
 				Hi, [contact name]! Again, this is [agent name] from Big City Guide. We are a mobile city guidebook that helps business travelers, tourist, locals and students find what they want and what they need instantaneously thru their Smartphone.<br>
-				We make a free downloadable application for iPhone and Android users to help them search for locations such as restaurants, café, hotels, bed and breakfast and tourist attractions and <b>[mention their business type].</b><br><br> 
+				We make a free downloadable application for iPhone and Android users to help them search for locations such as restaurants, cafï¿½, hotels, bed and breakfast and tourist attractions and <b>[mention their business type].</b><br><br> 
 				
 				Anybody would be able to locate businesses closest to them. It will provide them direction on how to get there, know the opening hours, current offers, and view detailed information of each business including contact numbers.<br><br>
 				
-				We’d like to add [business name] to our database.<br><br>
+				Weï¿½d like to add [business name] to our database.<br><br>
 				<b>Talking points: Walk-through app Download</b><br>
-				If you don’t mind me asking, do you have an iPhone or an Android? <i>(If yes, walk them through the download and features of the app.)</i><br><br> 
+				If you donï¿½t mind me asking, do you have an iPhone or an Android? <i>(If yes, walk them through the download and features of the app.)</i><br><br> 
 				
 				Go to your app store/android market and search for "big city guide."<br><br>
 				
 				You'll see that we are the only result. If you select us, you'll see a description of our app as well as some nice pictures of what the screen would look like. Go ahead and download it. You'll notice that it's free, so users don't have to pay to access your company's information.<br>
 				<i>(If no, ask them if they have a computer, then walk them through the features on our website. If no computer and no phone, then just go through the features with them verbally).</i><br><br>
 				<b>Features (give benefit statements)</b><br>
-				&nbsp;&nbsp;&nbsp;•	Businesses are listed by category<br>
-				&nbsp;&nbsp;&nbsp;•	Listing includes the name, address and phone number<br>
-				&nbsp;&nbsp;&nbsp;•	Link to the website<br>
-				&nbsp;&nbsp;&nbsp;•	View latest twitter feed<br>
-				&nbsp;&nbsp;&nbsp;•	Map and visual directions are provided<br>
-				&nbsp;&nbsp;&nbsp;•	My cloud feature<br>
-				&nbsp;&nbsp;&nbsp;•	FREE to download for Users<br>
-				&nbsp;&nbsp;&nbsp;•	Unlimited updates for subscribers<br><br>
+				&nbsp;&nbsp;&nbsp;ï¿½	Businesses are listed by category<br>
+				&nbsp;&nbsp;&nbsp;ï¿½	Listing includes the name, address and phone number<br>
+				&nbsp;&nbsp;&nbsp;ï¿½	Link to the website<br>
+				&nbsp;&nbsp;&nbsp;ï¿½	View latest twitter feed<br>
+				&nbsp;&nbsp;&nbsp;ï¿½	Map and visual directions are provided<br>
+				&nbsp;&nbsp;&nbsp;ï¿½	My cloud feature<br>
+				&nbsp;&nbsp;&nbsp;ï¿½	FREE to download for Users<br>
+				&nbsp;&nbsp;&nbsp;ï¿½	Unlimited updates for subscribers<br><br>
 				
-				As I’ve mentioned, we’re marketing ourselves as a free, do everything app and the latest version has only been up for a few months, but we’ve already had thousands of downloads. <br><br>
+				As Iï¿½ve mentioned, weï¿½re marketing ourselves as a free, do everything app and the latest version has only been up for a few months, but weï¿½ve already had thousands of downloads. <br><br>
 				
-				I’m not sure if you are aware that over 31 million tourists visit the UK every year, and more of them will be coming next year for the Olympics. Are you aware of this, Mr. [DM Name]? 
+				Iï¿½m not sure if you are aware that over 31 million tourists visit the UK every year, and more of them will be coming next year for the Olympics. Are you aware of this, Mr. [DM Name]? 
 								
 			</td>
 		</tr>
@@ -148,7 +150,7 @@
 				Updating your business to our database is easy. I can gather information like opening times, a short description of your business, contact information, 2 keywords that will help users locate you...<br><br>
 					
 				Once updated, your business profile is accessible to millions of iPhone or Android based Smartphone users who may potentially be your customers.<br>
-				Listing with BigCityGuide is just a fraction of the cost it would take to put up a newspaper or media ad, with much better results. It’s only £25 annually or about 2 pounds and few pence a month. There are no long term contracts with BigCityGuide
+				Listing with BigCityGuide is just a fraction of the cost it would take to put up a newspaper or media ad, with much better results. Itï¿½s only ï¿½25 annually or about 2 pounds and few pence a month. There are no long term contracts with BigCityGuide
 
 			</td>
 		</tr>
@@ -174,25 +176,25 @@
 		<tr>
 			<td>
 				<b>Business Information</b><br>
-				&nbsp;&nbsp;&nbsp;•	Location: <br>
-				&nbsp;&nbsp;&nbsp;•	Business Name: <br>
-				&nbsp;&nbsp;&nbsp;•	Building Name/No: <br>
-				&nbsp;&nbsp;&nbsp;•	Street: <br>
-				&nbsp;&nbsp;&nbsp;•	City: <br>
-				&nbsp;&nbsp;&nbsp;•	Postcode: <br>
-				&nbsp;&nbsp;&nbsp;•	Country: <br>
-				&nbsp;&nbsp;&nbsp;•	Phone: <br>
-				&nbsp;&nbsp;&nbsp;•	Email: <br>
-				&nbsp;&nbsp;&nbsp;•	Website: <br>	
-				&nbsp;&nbsp;&nbsp;•	Opening Times: 	<br>
-				&nbsp;&nbsp;&nbsp;•	Business Description: <br>
-				&nbsp;&nbsp;&nbsp;•	Business Keyword 1: <br>
-				&nbsp;&nbsp;&nbsp;•	Business Keyword 2: <br>	
+				&nbsp;&nbsp;&nbsp;ï¿½	Location: <br>
+				&nbsp;&nbsp;&nbsp;ï¿½	Business Name: <br>
+				&nbsp;&nbsp;&nbsp;ï¿½	Building Name/No: <br>
+				&nbsp;&nbsp;&nbsp;ï¿½	Street: <br>
+				&nbsp;&nbsp;&nbsp;ï¿½	City: <br>
+				&nbsp;&nbsp;&nbsp;ï¿½	Postcode: <br>
+				&nbsp;&nbsp;&nbsp;ï¿½	Country: <br>
+				&nbsp;&nbsp;&nbsp;ï¿½	Phone: <br>
+				&nbsp;&nbsp;&nbsp;ï¿½	Email: <br>
+				&nbsp;&nbsp;&nbsp;ï¿½	Website: <br>	
+				&nbsp;&nbsp;&nbsp;ï¿½	Opening Times: 	<br>
+				&nbsp;&nbsp;&nbsp;ï¿½	Business Description: <br>
+				&nbsp;&nbsp;&nbsp;ï¿½	Business Keyword 1: <br>
+				&nbsp;&nbsp;&nbsp;ï¿½	Business Keyword 2: <br>	
 				
 				<b>Contact Information</b><br>	
-				&nbsp;&nbsp;&nbsp;•	Contact Person:<br>	
-				&nbsp;&nbsp;&nbsp;•	Contact Email:<br>	
-				&nbsp;&nbsp;&nbsp;•	Contact Phone:<br>	
+				&nbsp;&nbsp;&nbsp;ï¿½	Contact Person:<br>	
+				&nbsp;&nbsp;&nbsp;ï¿½	Contact Email:<br>	
+				&nbsp;&nbsp;&nbsp;ï¿½	Contact Phone:<br>	
 			</td>
 		</tr>
 		<tr>
@@ -216,16 +218,16 @@
 		</tr>
 		<tr>
 			<td>
-				<font color = "BLUE">Also to show that we have authorization to set up your BigCityGuide listing, we’ve collected your credit card information which is:<br>
+				<font color = "BLUE">Also to show that we have authorization to set up your BigCityGuide listing, weï¿½ve collected your credit card information which is:<br>
 				&nbsp;&nbsp;&nbsp;1.	CC Type : (Visa, MasterCard, American Express, Discover)<br>
 				&nbsp;&nbsp;&nbsp;2.	CC Number :  <br>
 				&nbsp;&nbsp;&nbsp;3.	Expiration date :  (mm/yy)<br>
 				&nbsp;&nbsp;&nbsp;4.	Name that appears on the CC:  <br>
 				Is that correct?<br><br></font>
 				
-				We’ll be sending you the confirmation email with the details within 24 hours. Once you get it, you can use the username and password immediately. After you’ve saved your profile, you can check the app right away to see [business name]’s Big City Guide entry. And please remember that you can edit your information at any time, to update promotions, or put in more content.<br><br>
+				Weï¿½ll be sending you the confirmation email with the details within 24 hours. Once you get it, you can use the username and password immediately. After youï¿½ve saved your profile, you can check the app right away to see [business name]ï¿½s Big City Guide entry. And please remember that you can edit your information at any time, to update promotions, or put in more content.<br><br>
 				
-				<font color = "BLUE">Just to recap, we will be processing GBP25 on the card that you have provided me, and the name that will appear on your credit card bill is Polaris. Before I go, do you have further clarifications? Please don’t hesitate to contact me M-F, 9 to 5 at +442030025941 should you require further assistance</font> <br><br>
+				<font color = "BLUE">Just to recap, we will be processing GBP25 on the card that you have provided me, and the name that will appear on your credit card bill is Polaris. Before I go, do you have further clarifications? Please donï¿½t hesitate to contact me M-F, 9 to 5 at +442030025941 should you require further assistance</font> <br><br>
 
 				or<br><br>
 				

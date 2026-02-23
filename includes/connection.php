@@ -1,43 +1,33 @@
-<?php 
+<?php
+
+require_once(__DIR__ . '/config.php');
+
 Class Connection {
 
-		var $connection;
+    protected $connection;
 
-		function connectdb($database) {
-			$this->connection = mssql_connect("HELIX","sa","1nfin1ty");
-			                            if($this->connection)
-										   {
-											   if(mssql_select_db($database))
-											      {
-													return TRUE;
-												  }
-												  
-												else{
-													  return FALSE;
-												    }
-										   }
-										   
-										 else{ echo "Error Connection";}
-										 
-				 						
-										
-		                               }
+    function connectdb($database) {
+        try {
+            $dsn = "sqlsrv:Server=" . DB_SERVER . ";Database=" . $database;
+            $this->connection = new PDO($dsn, DB_USERNAME, DB_PASSWORD, array(
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            ));
+            return TRUE;
+        } catch (PDOException $e) {
+            error_log("Database connection error: " . $e->getMessage());
+            return FALSE;
+        }
+    }
 
+    function getConnection() {
+        return $this->connection;
+    }
 
-		function closedb() {
-								mssql_close($this->connection) or die("Unable to close database: ");
-								$this->connection = false;
-								return;
-							}
-							
-		
-
-
-
-
-
-
-
+    function closedb() {
+        $this->connection = null;
+        return;
+    }
 }
 
 ?>

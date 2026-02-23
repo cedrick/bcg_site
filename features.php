@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>Big City Guide Features & Benefits</title>
 <link rel="shortcut icon" href="templates/images/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="library/ui-lightness/jquery-ui.css" />
@@ -69,12 +71,12 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	it provides only relevant results
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	it provides only relevant results
 			</td>
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	users can easily find/get the contact information like the phone number and the  address
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	users can easily find/get the contact information like the phone number and the  address
 			</td>
 		</tr>
 		<tr>
@@ -92,12 +94,12 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	they'll know what businesses are near their location, whether its accessible or not
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	they'll know what businesses are near their location, whether its accessible or not
 			</td>
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	contact a business by clicking on the phone number on the listing; no need to memorize and dial the number
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	contact a business by clicking on the phone number on the listing; no need to memorize and dial the number
 			</td>
 		</tr>
 		<tr>
@@ -115,7 +117,7 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	can view additional information about your business (hours of operations, menu, other facilities and services)
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	can view additional information about your business (hours of operations, menu, other facilities and services)
 			</td>
 		</tr>
 		<tr>
@@ -133,7 +135,7 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	Can view latest updates regarding your offers, promos, deals, etc.
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	Can view latest updates regarding your offers, promos, deals, etc.
 			</td>
 		</tr>
 		<tr>
@@ -151,12 +153,12 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	it will be easier for them to get to your location
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	it will be easier for them to get to your location
 			</td>
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	visual directions on how to get to the business from where they are located
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	visual directions on how to get to the business from where they are located
 			</td>
 		</tr>
 		<tr>
@@ -174,7 +176,7 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	users can prepare their itinerary by saving the information of the businesses/places they'd like to go to
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	users can prepare their itinerary by saving the information of the businesses/places they'd like to go to
 			</td>
 		</tr>
 		<tr>
@@ -192,7 +194,7 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	can download the app at no cost
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	can download the app at no cost
 			</td>
 		</tr>
 		<tr>
@@ -210,7 +212,7 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	bigger market reach
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	bigger market reach
 			</td>
 		</tr>
 		<tr>
@@ -235,7 +237,7 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	business name,business address, business description, phone number
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	business name,business address, business description, phone number
 			</td>
 		</tr>
 		<tr>
@@ -253,7 +255,7 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	You can provide your potential customers additional information about your business (hours of operations, menu, other facilities and services)
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	You can provide your potential customers additional information about your business (hours of operations, menu, other facilities and services)
 			</td>
 		</tr>
 		<tr>
@@ -271,12 +273,12 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	it will be easier for them to get to your location
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	it will be easier for them to get to your location
 			</td>
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	visual directions on how to get to the business from where they are located
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	visual directions on how to get to the business from where they are located
 			</td>
 		</tr>
 		<tr>
@@ -294,7 +296,7 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	Can post latest updates regarding your offers, promos, deals, etc.
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	Can post latest updates regarding your offers, promos, deals, etc.
 			</td>
 		</tr>
 		<tr>
@@ -312,7 +314,7 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	Since you will be provided with your own username and password, you can access you listing anytime. update your company information without additional cost
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	Since you will be provided with your own username and password, you can access you listing anytime. update your company information without additional cost
 			</td>
 		</tr>
 		<tr>
@@ -330,7 +332,7 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	A business can be listed under 2 different categories. It’s like having 2 different advertisements for the price of one
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	A business can be listed under 2 different categories. Itï¿½s like having 2 different advertisements for the price of one
 			</td>
 		</tr>
 		<tr>
@@ -343,22 +345,22 @@
 		</tr>
 		<tr>
 			<td>
-				7.) £25 per year
+				7.) ï¿½25 per year
 			</td>
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	Less expensive compared to how much you spend on your other advertisements.
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	Less expensive compared to how much you spend on your other advertisements.
 			</td>
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	it’s like spending only £ 2 /  month on your advertisement for increased market potential
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	itï¿½s like spending only ï¿½ 2 /  month on your advertisement for increased market potential
 			</td>
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	it’s only a fraction of the cost of your usual advertisement
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	itï¿½s only a fraction of the cost of your usual advertisement
 			</td>
 		</tr>
 		<tr>
@@ -376,7 +378,7 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	you have the option to renew your listing after 1 year
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	you have the option to renew your listing after 1 year
 			</td>
 		</tr>
 		<tr>
@@ -394,7 +396,7 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	you can get your money back if you're not satisfied with the increased business we're getting you within 14 days
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½	you can get your money back if you're not satisfied with the increased business we're getting you within 14 days
 			</td>
 		</tr>
 		<tr>
@@ -422,27 +424,27 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>•REACH</b>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ï¿½REACH</b>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oAdvertising should reach as many consumers, especially in the business’ target market, as possible. 
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oAdvertising should reach as many consumers, especially in the businessï¿½ target market, as possible. 
 			</td>
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>•FREQUENCY</b>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ï¿½FREQUENCY</b>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o	Advertising should appear often to consumers, especially when looking for the business’ product or service.
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o	Advertising should appear often to consumers, especially when looking for the businessï¿½ product or service.
 			</td>
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>•ECONOMY	</b>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ï¿½ECONOMY	</b>
 			</td>
 		</tr>
 		<tr>
@@ -452,7 +454,7 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>•USAGE</b>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ï¿½USAGE</b>
 			</td>
 		</tr>
 		<tr>
@@ -462,7 +464,7 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>•CUSTOMER FOLLOW UP</b>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ï¿½CUSTOMER FOLLOW UP</b>
 			</td>
 		</tr>
 		<tr>

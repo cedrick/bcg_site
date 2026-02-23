@@ -1,1 +1,1 @@
-alert("HELLO!");
+// BigCityGuide custom scripts

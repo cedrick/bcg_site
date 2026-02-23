@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>Big City Guide Info</title>
 <link rel="shortcut icon" href="templates/images/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="library/ui-lightness/jquery-ui.css" />
@@ -65,7 +67,7 @@
 		<tr>
 			<td>
 				It allows visitors who are new to a city to locate local businesses such as restaurants & bars.
-It also allows you to plan a trip in advance – which hotel would you like to stay at, which restaurants would you like to eat at, which attractions would you like to go and see etc.
+It also allows you to plan a trip in advance ï¿½ which hotel would you like to stay at, which restaurants would you like to eat at, which attractions would you like to go and see etc.
 			</td>
 		</tr>
 		<tr>
@@ -102,7 +104,7 @@ It also allows you to plan a trip in advance – which hotel would you like to sta
 		<tr>
 			<td>
 				<font color ="#808080">There are 30 categories which are listed below;</font><br>
-				1.	<i>Restaurants – Italian, Indian, Chinese & Bistro</i><br>
+				1.	<i>Restaurants ï¿½ Italian, Indian, Chinese & Bistro</i><br>
 				2.	ATM Machines<br>
 				3.	Car Parks<br>
 				4.	<i>Attractions</i><br>
@@ -223,7 +225,7 @@ It also allows you to plan a trip in advance – which hotel would you like to sta
 		</tr>
 		<tr>
 			<td>
-				Big City Guide is free to users to download.  Businesses are expected to pay an annual subscription of £25 in the UK.
+				Big City Guide is free to users to download.  Businesses are expected to pay an annual subscription of ï¿½25 in the UK.
 			</td>
 		</tr>
 		<tr>
@@ -243,8 +245,8 @@ It also allows you to plan a trip in advance – which hotel would you like to sta
 		</tr>
 		<tr>
 			<td>
-				In the Autumn we will launch in the USA, Canada, Singapore, Australia, New Zealand & South Africa – 350 extra cities. 
-In the winter we will launch in Europe – another 350 cities
+				In the Autumn we will launch in the USA, Canada, Singapore, Australia, New Zealand & South Africa ï¿½ 350 extra cities. 
+In the winter we will launch in Europe ï¿½ another 350 cities
 			</td>
 		</tr>
 		<tr>
@@ -264,7 +266,7 @@ In the winter we will launch in Europe – another 350 cities
 			<td>
 				1.	Initial call to introduce the concept, encourage them to download Big City Guide and send an initial email informing about the product.<br><br>
 				2.	Follow up call to gain sign up agreement.  Complete some of the business data such as Name, address, phone number, contact etc. and submit to BCG.<br><br>
-				3.	A unique login & password is then created for the business. This together with the business name is copied into a final email which is sent to the business.  This final email contains 2 links.  The first to complete their business details – business description, opening hours & twitter feed,  the second is a link to paypal so they can complete their payment.<br><br>
+				3.	A unique login & password is then created for the business. This together with the business name is copied into a final email which is sent to the business.  This final email contains 2 links.  The first to complete their business details ï¿½ business description, opening hours & twitter feed,  the second is a link to paypal so they can complete their payment.<br><br>
 				4.	Some businesses will be national or regional in nature and it may be better to deal with them on that basis.<br><br>
 			</td>
 		</tr>
@@ -299,7 +301,7 @@ In the winter we will launch in Europe – another 350 cities
 		</tr>
 		<tr>
 			<td>
-				<b>Big City Guide FAQ’s</b>
+				<b>Big City Guide FAQï¿½s</b>
 			</td>
 		</tr>
 		<tr>
@@ -318,10 +320,10 @@ In the winter we will launch in Europe – another 350 cities
 				<font color = "#135FF7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes, you can be listed in a maximum of 2 categories.<br><br></font>
 				
 				5.	I have 2 restaurants in this city, how much would I have to pay?<br>
-				<font color = "#135FF7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You would have to pay £25 per restaurant<br><br></font>
+				<font color = "#135FF7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You would have to pay ï¿½25 per restaurant<br><br></font>
 				
 				6.	I have 5 hotels, do you offer discounts?<br>
-				<font color = "#135FF7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unfortunately not, we feel £25 per business, per year represents good value.<br></font>
+				<font color = "#135FF7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unfortunately not, we feel ï¿½25 per business, per year represents good value.<br></font>
 			</td>
 		</tr>
 	</table>

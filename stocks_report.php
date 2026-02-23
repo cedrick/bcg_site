@@ -22,9 +22,9 @@ if (in_array('cashier', $roles, true) || $role === 'cashier') {
 
 /* Allowed roles (cashier intentionally omitted) */
 $allowed = ['admin','store_manager','inventory account','inventory_account','inventory'];
-$authorized = count(array_intersect($roles, $allowed)) > 0;
+$authorized = count(array_intersect($roles, $allowed)) > 0 || in_array($role, $allowed, true);
 
-if (!$authorized) {
+if (!$authorized && $role !== '') {
     http_response_code(403);
     exit('Forbidden');
 }

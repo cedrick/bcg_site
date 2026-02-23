@@ -124,9 +124,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['close_return'])) {
     } else { $msg = 'Invalid return ID.'; }
 }
 
-/* ================= Fetch data for display ================= */
-$products = $db->query("SELECT id, sku, name, uom, alt_uom FROM products ORDER BY name ASC")->fetchAll(PDO::FETCH_ASSOC);
-$returns = $db->query("SELECT * FROM returns ORDER BY id DESC")->fetchAll(PDO::FETCH_ASSOC);
+/* ================= AJAX ================= */
+if (isset($_GET['ajax']) && $_GET['ajax'] === 'returns') {
+    $q = trim($_GET['q'] ?? '');
+    $sql = "SELECT * FROM returns";
+    $params = [];
+    if (strlen($q) > 0) {
+        $sql .= " WHERE (reference_no LIKE :q OR product_name LIKE :q OR sku LIKE :q OR reason LIKE :q OR action LIKE :q OR status LIKE :q OR created_by LIKE :q)";
+        $params[':q'] = '%' . $q . '%';
+    }
+    $sql .= " ORDER BY created_at DESC";
+    $stmt = $db->prepare($sql);
+    $stmt->execute($params);
+    $returns = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    ob_start();
+    if (empty($returns)) {
+        echo '<tr><td colspan="9" class="text-muted">No returns logged.</td></tr>';
+    } else {
+        foreach ($returns as $r) {
+            echo '<tr>';
+            echo '<td>' . htmlspecialchars($r['created_at']) . '</td>';
+            echo '<td>' . htmlspecialchars($r['sku'] . ' - ' . $r['product_name']) . '</td>';
+            echo '<td>' . htmlspecialchars($r['qty'] . ' ' . $r['uom']) . '</td>';
+            echo '<td>' . htmlspecialchars($r['reason']) . '</td>';
+            echo '<td>' . htmlspecialchars($r['reference_no']) . '</td>';
+            echo '<td>' . htmlspecialchars($r['action']) . '</td>';
+            echo '<td><span class="badge-status status-' . htmlspecialchars($r['status']) . '">' . htmlspecialchars($r['status']) . '</span></td>';
+            echo '<td>' . htmlspecialchars($r['created_by']) . '</td>';
+            echo '<td>';
+            if ($r['status'] !== 'closed') {
+                echo '<button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#closeModal" data-id="' . intval($r['id']) . '" data-action="' . htmlspecialchars($r['action']) . '">Close</button>';
+            }
+            echo '</td></tr>';
+        }
+    }
+    $html = ob_get_clean();
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(['html' => $html, 'count' => count($returns)]);
+    exit;
+}
+
+/* ================= Data ================= */
+$products = $db->query("SELECT id, sku, name FROM products ORDER BY name COLLATE NOCASE ASC")->fetchAll(PDO::FETCH_ASSOC);
+$uoms = $db->query("SELECT name FROM uoms ORDER BY name COLLATE NOCASE ASC")->fetchAll(PDO::FETCH_ASSOC);
+$returns = $db->query("SELECT * FROM returns ORDER BY created_at DESC")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!doctype html>
 <html>
@@ -134,201 +175,250 @@ $returns = $db->query("SELECT * FROM returns ORDER BY id DESC")->fetchAll(PDO::F
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Returns - Fusion I.T. Solutions</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap @5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/select2 @4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/jquery @3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2 @4.1.0-rc.0/dist/js/select2.min.js"></script>
+<style>
+:root{--brand:#fc3503;--muted:#6c757d}
+body{background:#f6f7fb;color:#222}
+.topbar{background:linear-gradient(90deg,#fff,#f8f9ff);padding:12px;border-radius:10px;box-shadow:0 2px 6px rgba(16,24,40,.04)}
+.brand{display:flex;align-items:center;gap:.75rem}
+.brand img{height:44px;object-fit:contain}
+.badge-status{padding:.35rem .6rem;border-radius:.5rem;font-weight:600}
+.status-pending{background:#fff3cd;color:#664d03}
+.status-closed{background:#e7f1ff;color:#0d6efd}
+.btn,.btn-primary{background-color:var(--brand)!important;border-color:var(--brand)!important;color:#fff!important}
+.btn-outline-primary{background:transparent!important;border-color:var(--brand)!important;color:var(--brand)!important}
+</style>
 </head>
 <body>
-<div class="container mt-4">
+<div class="container py-4">
 
-    <h4 class="mb-3">Defective Item Returns &amp; Replacement Log</h4>
-
-    <?php if ($msg): ?>
-        <div class="alert alert-info alert-dismissible fade show" role="alert">
-            <?= htmlspecialchars($msg) ?>
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
+<!-- HEADER -->
+<div class="d-flex justify-content-between align-items-center mb-3 topbar">
+  <div class="brand">
+    <?php if (file_exists(__DIR__.'/assets/logo.png')): ?>
+      <img src="assets/logo.png" alt="logo">
+    <?php else: ?>
+      <div style="width:44px;height:44px;border-radius:8px;background:var(--brand);display:flex;align-items:center;justify-content:center;color:white;font-weight:700">F</div>
     <?php endif; ?>
-
-    <!-- Add Return Form -->
-    <div class="card mb-4">
-        <div class="card-header">Log a Return</div>
-        <div class="card-body">
-            <form method="post">
-                <div class="row g-2 align-items-end">
-                    <div class="col-md-3">
-                        <label class="form-label">Product</label>
-                        <select name="product_id" id="productSelect" class="form-select form-select-sm" required>
-                            <option value="">-- Select --</option>
-                            <?php foreach ($products as $pr): ?>
-                                <option value="<?= $pr['id'] ?>"
-                                    data-uom="<?= htmlspecialchars($pr['uom'] ?? '') ?>"
-                                    data-alt-uom="<?= htmlspecialchars($pr['alt_uom'] ?? '') ?>">
-                                    <?= htmlspecialchars($pr['sku'] . ' - ' . $pr['name']) ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="col-md-1">
-                        <label class="form-label">Qty</label>
-                        <input type="number" name="qty" class="form-control form-control-sm" min="0.01" step="any" required>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="form-label">UOM</label>
-                        <select name="uom" id="uomSelect" class="form-select form-select-sm">
-                            <option value="">--</option>
-                        </select>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="form-label">Action</label>
-                        <select name="action" class="form-select form-select-sm">
-                            <option value="replace">Replace</option>
-                            <option value="damage">Damage</option>
-                            <option value="refund">Refund</option>
-                        </select>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="form-label">Reference #</label>
-                        <input type="text" name="reference_no" class="form-control form-control-sm">
-                    </div>
-                    <div class="col-md-3 mt-2">
-                        <label class="form-label">Reason</label>
-                        <input type="text" name="reason" class="form-control form-control-sm">
-                    </div>
-                    <div class="col-md-2 mt-2">
-                        <button type="submit" name="add_return" class="btn btn-primary btn-sm">Add Return</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+    <div>
+      <div style="font-size:1.15rem;font-weight:700">Fusion I.T. Solutions</div>
+      <div class="small text-muted">Defective Items & Returns Log</div>
     </div>
+  </div>
+  <div class="d-flex gap-2 align-items-center">
+    <input id="globalSearch" class="form-control form-control-sm" placeholder="Search Sale ID, product, reason, user...">
+    <a href="products.php" class="btn btn-outline-primary btn-sm">Products</a>
+    <a href="index.php" class="btn btn-outline-primary btn-sm">Dashboard</a>
+  </div>
+</div>
 
-    <!-- Returns Table -->
-    <div class="card">
-        <div class="card-header">Return Records</div>
-        <div class="card-body p-0">
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped table-sm mb-0">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>ID</th>
-                            <th>SKU</th>
-                            <th>Product</th>
-                            <th>Qty</th>
-                            <th>UOM</th>
-                            <th>Action</th>
-                            <th>Reason</th>
-                            <th>Ref #</th>
-                            <th>Status</th>
-                            <th>Created By</th>
-                            <th>Date</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php if (empty($returns)): ?>
-                        <tr><td colspan="12" class="text-center text-muted">No return records found.</td></tr>
-                    <?php else: ?>
-                        <?php foreach ($returns as $r): ?>
-                        <tr>
-                            <td><?= $r['id'] ?></td>
-                            <td><?= htmlspecialchars($r['sku'] ?? '') ?></td>
-                            <td><?= htmlspecialchars($r['product_name'] ?? '') ?></td>
-                            <td><?= $r['qty'] ?></td>
-                            <td><?= htmlspecialchars($r['uom'] ?? '') ?></td>
-                            <td><?= htmlspecialchars($r['action'] ?? '') ?></td>
-                            <td><?= htmlspecialchars($r['reason'] ?? '') ?></td>
-                            <td><?= htmlspecialchars($r['reference_no'] ?? '') ?></td>
-                            <td>
-                                <?php if ($r['status'] === 'closed'): ?>
-                                    <span class="badge bg-secondary">Closed</span>
-                                <?php else: ?>
-                                    <span class="badge bg-warning text-dark">Pending</span>
-                                <?php endif; ?>
-                            </td>
-                            <td><?= htmlspecialchars($r['created_by'] ?? '') ?></td>
-                            <td><?= htmlspecialchars($r['created_at'] ?? '') ?></td>
-                            <td>
-                                <?php if ($r['status'] !== 'closed'): ?>
-                                    <button type="button" class="btn btn-outline-danger btn-sm"
-                                        data-bs-toggle="modal" data-bs-target="#closeModal"
-                                        data-id="<?= $r['id'] ?>"
-                                        data-action="<?= htmlspecialchars($r['action'] ?? '') ?>">
-                                        Resolve
-                                    </button>
-                                <?php endif; ?>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+<?php if ($msg): ?>
+<div class="alert alert-info"><?= htmlspecialchars($msg) ?></div>
+<?php endif; ?>
 
-</div><!-- /.container -->
+<!-- Add Return Form -->
+<div class="card mb-3">
+<div class="card-body">
+<h6 class="mb-3">Log Defective Item</h6>
+<form method="post" class="row g-2">
+<div class="col-md-4">
+  <label class="form-label small">Product</label>
+  <select name="product_id" class="form-select form-select-sm product-picker" required>
+    <option value="">-- select product --</option>
+    <?php foreach ($products as $p): ?>
+    <option value="<?= $p['id'] ?>"><?= htmlspecialchars($p['sku'].' - '.$p['name']) ?></option>
+    <?php endforeach; ?>
+  </select>
+</div>
+<div class="col-md-2">
+  <label class="form-label small">Qty</label>
+  <input name="qty" type="number" step="any" class="form-control form-control-sm" required>
+</div>
+<div class="col-md-2">
+  <label class="form-label small">UoM</label>
+  <select name="uom" class="form-select form-select-sm">
+    <option value="">-- UoM --</option>
+    <?php foreach ($uoms as $u): ?>
+    <option value="<?= htmlspecialchars($u['name']) ?>"><?= htmlspecialchars($u['name']) ?></option>
+    <?php endforeach; ?>
+  </select>
+</div>
+<div class="col-md-4">
+  <label class="form-label small">Reason</label>
+  <input name="reason" class="form-control form-control-sm" placeholder="Defective / damaged">
+</div>
+<div class="col-md-3">
+  <label class="form-label small">Action</label>
+  <select name="action" class="form-select form-select-sm">
+    <option value="damage">Damage</option>
+    <option value="replace">Replace</option>
+  </select>
+</div>
+<div class="col-md-3">
+  <label class="form-label small">Sales ID</label>
+  <input name="reference_no" class="form-control form-control-sm">
+</div>
+<div class="col-12 text-end">
+  <button name="add_return" class="btn btn-primary btn-sm">Save Return</button>
+</div>
+</form>
+</div>
+</div>
+
+<!-- Return History -->
+<div class="card">
+<div class="card-body">
+<h6 class="mb-3">Return History</h6>
+<div class="table-responsive">
+<table class="table table-sm table-hover">
+<thead class="table-light">
+<tr>
+<th>Date</th><th>Product</th><th>Qty</th><th>Reason</th><th>Sale ID</th>
+<th>Action</th><th>Status</th><th>User</th><th></th>
+</tr>
+</thead>
+<tbody id="returnsTbody">
+<?php if (!$returns): ?>
+<tr><td colspan="9" class="text-muted">No returns logged.</td></tr>
+<?php else: foreach ($returns as $r): ?>
+<tr>
+<td><?= htmlspecialchars($r['created_at']) ?></td>
+<td><?= htmlspecialchars($r['sku'].' - '.$r['product_name']) ?></td>
+<td><?= htmlspecialchars($r['qty'].' '.$r['uom']) ?></td>
+<td><?= htmlspecialchars($r['reason']) ?></td>
+<td><?= htmlspecialchars($r['reference_no']) ?></td>
+<td><?= htmlspecialchars($r['action']) ?></td>
+<td><span class="badge-status status-<?= htmlspecialchars($r['status']) ?>">
+<?= htmlspecialchars($r['status']) ?></span></td>
+<td><?= htmlspecialchars($r['created_by']) ?></td>
+<td>
+<?php if ($r['status'] !== 'closed'): ?>
+<button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#closeModal"
+    data-id="<?= intval($r['id']) ?>" data-action="<?= htmlspecialchars($r['action']) ?>">
+    Close
+</button>
+<?php endif; ?>
+</td>
+</tr>
+<?php endforeach; endif; ?>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 
 <!-- Close Confirmation Modal -->
-<div class="modal fade" id="closeModal" tabindex="-1">
+<div class="modal fade" id="closeModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Resolve Return</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <h5 class="modal-title">Close Return</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Are you sure you want to close this return?</p>
+        <p>Mark this return as resolved?</p>
+        <div id="inventory-prompt" style="display:none;">
+          <p>Do you want to add this item back to inventory?</p>
+        </div>
       </div>
-      <div class="modal-footer">
-        <form method="post" id="closeForm">
+      <div class="modal-footer" id="closeModalFooter">
+        <form method="post" id="closeForm" class="d-flex gap-2 w-100 justify-content-end">
           <input type="hidden" name="close_return" value="1">
           <input type="hidden" name="id" id="closeId">
           <input type="hidden" name="add_to_inventory" id="addToInventory" value="no">
           <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-sm" id="addYesBtn" style="display:none;background-color:#198754!important;border-color:#198754!important;color:#fff!important;">Add to Inventory and Close</button>
-          <button type="submit" class="btn btn-primary btn-sm" id="confirmClose">Close Only</button>
+          <button type="submit" name="close_return" class="btn btn-primary btn-sm" id="confirmClose">Close</button>
         </form>
       </div>
     </div>
   </div>
 </div>
 
+<footer class="text-muted small mt-3">
+Returns are logged for accountability. Inventory may be optionally updated on close for damage/replace (with UoM conversion).
+</footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap @5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-/* Populate UOM dropdown when product changes */
-$('#productSelect').on('change', function() {
-    var sel = $(this).find(':selected');
-    var uom = sel.data('uom') || '';
-    var altUom = sel.data('alt-uom') || '';
-    var $uomSel = $('#uomSelect').empty();
-    if (uom) $uomSel.append('<option value="' + uom + '">' + uom + '</option>');
-    if (altUom) $uomSel.append('<option value="' + altUom + '">' + altUom + '</option>');
-    if (!uom && !altUom) $uomSel.append('<option value="">--</option>');
-});
+$(document).ready(function() {
 
-/* Modal: set hidden fields and show/hide "Add to Inventory" button */
-$('#closeModal').on('show.bs.modal', function (event) {
-    var button = $(event.relatedTarget);
-    var id = button.data('id');
-    var action = button.data('action');
+    // Initialize searchable product picker
+    $('.product-picker').select2({
+        placeholder: "-- search product --",
+        allowClear: true
+    });
 
-    $('#closeId').val(id);
-    $('#addToInventory').val('no');
+    // ========== Global search — automatic, no button ==========
+    var searchTimer = null;
+    $('#globalSearch').on('input', function() {
+        var q = $(this).val();
+        if (searchTimer) clearTimeout(searchTimer);
+        searchTimer = setTimeout(function() {
+            $.ajax({
+                url: '?ajax=returns',
+                data: { q: q },
+                dataType: 'json',
+                success: function(data) {
+                    if (data && typeof data.html !== 'undefined') {
+                        $('#returnsTbody').html(data.html);
+                    }
+                },
+                error: function() {
+                    console.error('Search failed');
+                }
+            });
+        }, 300);
+    });
 
-    if (action === 'damage' || action === 'replace') {
-        $('#addYesBtn').show();
-    } else {
-        $('#addYesBtn').hide();
-    }
-});
+    // ========== Modal logic for close button ==========
+    $('#closeModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var id = button.data('id');
+        var action = button.data('action');
 
-/* "Add to Inventory and Close" — set flag then submit */
-$(document).on('click', '#addYesBtn', function(e) {
-    e.preventDefault();
-    $('#addToInventory').val('yes');
-    $('#closeForm').submit();
+        var modal = $(this);
+        modal.find('#closeId').val(id);
+        modal.find('#addToInventory').val('no');
+
+        var prompt = modal.find('#inventory-prompt');
+        var confirmBtn = modal.find('#confirmClose');
+
+        // Remove any existing "Add to Inventory" button to avoid duplicates
+        modal.find('#addYesBtn').remove();
+
+        if (action === 'damage' || action === 'replace') {
+            prompt.show();
+            confirmBtn.text('Close Without Adding');
+            // Insert "Add to Inventory and Close" button before the close button
+            $('<button type="button" id="addYesBtn" class="btn btn-sm" style="background-color:#198754!important;border-color:#198754!important;color:#fff!important;">Add to Inventory and Close</button>')
+                .insertBefore(confirmBtn);
+        } else {
+            prompt.hide();
+            confirmBtn.text('Close');
+        }
+    });
+
+    // Reset modal when hidden
+    $('#closeModal').on('hidden.bs.modal', function () {
+        $(this).find('#addYesBtn').remove();
+        $(this).find('#inventory-prompt').hide();
+        $(this).find('#addToInventory').val('no');
+        $(this).find('#confirmClose').text('Close');
+    });
+
+    // Handle "Add to Inventory and Close" button click
+    $(document).on('click', '#addYesBtn', function(e) {
+        e.preventDefault();
+        $('#addToInventory').val('yes');
+        $('#closeForm').submit();
+    });
+
 });
 </script>
-
 </body>
 </html>

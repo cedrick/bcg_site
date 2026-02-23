@@ -123,6 +123,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['close_return'])) {
         } else { $msg = 'Return not found.'; }
     } else { $msg = 'Invalid return ID.'; }
 }
+
+/* ================= Fetch data for display ================= */
+$products = $db->query("SELECT id, sku, name, uom, alt_uom FROM products ORDER BY name ASC")->fetchAll(PDO::FETCH_ASSOC);
+$returns = $db->query("SELECT * FROM returns ORDER BY id DESC")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!doctype html>
 <html>
@@ -135,18 +139,155 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['close_return'])) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+<div class="container mt-4">
+
+    <h4 class="mb-3">Defective Item Returns &amp; Replacement Log</h4>
+
+    <?php if ($msg): ?>
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <?= htmlspecialchars($msg) ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    <?php endif; ?>
+
+    <!-- Add Return Form -->
+    <div class="card mb-4">
+        <div class="card-header">Log a Return</div>
+        <div class="card-body">
+            <form method="post">
+                <div class="row g-2 align-items-end">
+                    <div class="col-md-3">
+                        <label class="form-label">Product</label>
+                        <select name="product_id" id="productSelect" class="form-select form-select-sm" required>
+                            <option value="">-- Select --</option>
+                            <?php foreach ($products as $pr): ?>
+                                <option value="<?= $pr['id'] ?>"
+                                    data-uom="<?= htmlspecialchars($pr['uom'] ?? '') ?>"
+                                    data-alt-uom="<?= htmlspecialchars($pr['alt_uom'] ?? '') ?>">
+                                    <?= htmlspecialchars($pr['sku'] . ' - ' . $pr['name']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="form-label">Qty</label>
+                        <input type="number" name="qty" class="form-control form-control-sm" min="0.01" step="any" required>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">UOM</label>
+                        <select name="uom" id="uomSelect" class="form-select form-select-sm">
+                            <option value="">--</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Action</label>
+                        <select name="action" class="form-select form-select-sm">
+                            <option value="replace">Replace</option>
+                            <option value="damage">Damage</option>
+                            <option value="refund">Refund</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Reference #</label>
+                        <input type="text" name="reference_no" class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-3 mt-2">
+                        <label class="form-label">Reason</label>
+                        <input type="text" name="reason" class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-2 mt-2">
+                        <button type="submit" name="add_return" class="btn btn-primary btn-sm">Add Return</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Returns Table -->
+    <div class="card">
+        <div class="card-header">Return Records</div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-sm mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>SKU</th>
+                            <th>Product</th>
+                            <th>Qty</th>
+                            <th>UOM</th>
+                            <th>Action</th>
+                            <th>Reason</th>
+                            <th>Ref #</th>
+                            <th>Status</th>
+                            <th>Created By</th>
+                            <th>Date</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php if (empty($returns)): ?>
+                        <tr><td colspan="12" class="text-center text-muted">No return records found.</td></tr>
+                    <?php else: ?>
+                        <?php foreach ($returns as $r): ?>
+                        <tr>
+                            <td><?= $r['id'] ?></td>
+                            <td><?= htmlspecialchars($r['sku'] ?? '') ?></td>
+                            <td><?= htmlspecialchars($r['product_name'] ?? '') ?></td>
+                            <td><?= $r['qty'] ?></td>
+                            <td><?= htmlspecialchars($r['uom'] ?? '') ?></td>
+                            <td><?= htmlspecialchars($r['action'] ?? '') ?></td>
+                            <td><?= htmlspecialchars($r['reason'] ?? '') ?></td>
+                            <td><?= htmlspecialchars($r['reference_no'] ?? '') ?></td>
+                            <td>
+                                <?php if ($r['status'] === 'closed'): ?>
+                                    <span class="badge bg-secondary">Closed</span>
+                                <?php else: ?>
+                                    <span class="badge bg-warning text-dark">Pending</span>
+                                <?php endif; ?>
+                            </td>
+                            <td><?= htmlspecialchars($r['created_by'] ?? '') ?></td>
+                            <td><?= htmlspecialchars($r['created_at'] ?? '') ?></td>
+                            <td>
+                                <?php if ($r['status'] !== 'closed'): ?>
+                                    <button type="button" class="btn btn-outline-danger btn-sm"
+                                        data-bs-toggle="modal" data-bs-target="#closeModal"
+                                        data-id="<?= $r['id'] ?>"
+                                        data-action="<?= htmlspecialchars($r['action'] ?? '') ?>">
+                                        Resolve
+                                    </button>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div><!-- /.container -->
 
 <!-- Close Confirmation Modal -->
 <div class="modal fade" id="closeModal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Resolve Return</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to close this return?</p>
+      </div>
       <div class="modal-footer">
         <form method="post" id="closeForm">
           <input type="hidden" name="close_return" value="1">
           <input type="hidden" name="id" id="closeId">
           <input type="hidden" name="add_to_inventory" id="addToInventory" value="no">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
           <button type="button" class="btn btn-sm" id="addYesBtn" style="display:none;background-color:#198754!important;border-color:#198754!important;color:#fff!important;">Add to Inventory and Close</button>
-          <button type="submit" class="btn btn-primary btn-sm" id="confirmClose">Close</button>
+          <button type="submit" class="btn btn-primary btn-sm" id="confirmClose">Close Only</button>
         </form>
       </div>
     </div>
@@ -154,6 +295,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['close_return'])) {
 </div>
 
 <script>
+/* Populate UOM dropdown when product changes */
+$('#productSelect').on('change', function() {
+    var sel = $(this).find(':selected');
+    var uom = sel.data('uom') || '';
+    var altUom = sel.data('alt-uom') || '';
+    var $uomSel = $('#uomSelect').empty();
+    if (uom) $uomSel.append('<option value="' + uom + '">' + uom + '</option>');
+    if (altUom) $uomSel.append('<option value="' + altUom + '">' + altUom + '</option>');
+    if (!uom && !altUom) $uomSel.append('<option value="">--</option>');
+});
+
+/* Modal: set hidden fields and show/hide "Add to Inventory" button */
 $('#closeModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget);
     var id = button.data('id');
@@ -169,6 +322,7 @@ $('#closeModal').on('show.bs.modal', function (event) {
     }
 });
 
+/* "Add to Inventory and Close" — set flag then submit */
 $(document).on('click', '#addYesBtn', function(e) {
     e.preventDefault();
     $('#addToInventory').val('yes');
